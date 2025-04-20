@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .update-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Electricity Bill Details</h2>
+        <table>
+            <tr>
+                <th>CA Number</th>
+                <td>{{ bill_data[0]['CA_Number'] }}</td>
+            </tr>
+            <tr>
+                <th>Customer Name</th>
+                <td>{{ bill_data[0]['Customer_Name'] }}</td>
+            </tr>
+            <tr>
+                <th>Meter Number</th>
+                <td>{{ bill_data[0]['Meter_Number'] }}</td>
+            </tr>
+            <tr>
+                <th>Tariff Plan</th>
+                <td>{{ bill_data[0]['Tariff_Plan'] }}</td>
+            </tr>
+            <tr>
+                <th>Fixed Charge</th>
+                <td>{{ bill_data[0]['Fixed_Charge'] }}</td>
+            </tr>
+            <tr>
+                <th>Current Month</th>
+                <td>{{ bill_data[0]['Current_Month'] }}</td>
+            </tr>
+            <tr>
+                <th>Previous Month</th>
+                <td>{{ bill_data[0]['Previous_Month'] }}</td>
+            </tr>
+            <tr>
+                <th>kWh Difference</th>
+                <td>{{ bill_data[0]['Kwh_Difference'] }}</td>
+            </tr>
+            <tr>
+                <th>Energy Charge</th>
+                <td>{{ bill_data[0]['Energy_Charge'] }}</td>
+            </tr>
+            <tr>
+                <th>Fuel Surcharge</th>
+                <td>{{ bill_data[0]['Fuel_Surcharge'] }}</td>
+            </tr>
+            <tr>
+                <th>Tax</th>
+                <td>{{ bill_data[0]['Tax'] }}</td>
+            </tr>
+            <tr>
+                <th>Power Factor Penalty</th>
+                <td>{{ bill_data[0]['Power_Factor_Penalty'] }}</td>
+            </tr>
+        </table>
+        <button class="update-btn" onclick="updateBill()">Update Bill</button>
+    </div>
+
+    <script>
+        function updateBill() {
+            alert('Feature to update bill is coming soon!');
+        }
+    </script>
+</body>
+</html>

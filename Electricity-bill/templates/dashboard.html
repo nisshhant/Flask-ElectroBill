@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            
+        }
+.mainpage{
+    display: flex;
+}
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding-top: 20px;
+            min-height: 80vh;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #fff;
+            padding: 10px;
+            border-bottom: 1px solid #555;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 20px 0;
+        }
+
+        .sidebar a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+            padding-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #fff;
+        }
+
+        .main-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .main-content h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    background-color: #f9fafb;
+    color: #000;
+}
+
+.card-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class = "mainpage">
+    
+    <div class="sidebar">
+        
+        <h2>Admin Dashboard</h2>
+        <ul>
+            <li><a href="/add-customer">➕ Add New Customer</a></li>
+            <li><a href="/update-customer">➕ Update Customer</a></li>
+            <li><a href="/generate-bill">🧾 Generate Bill</a></li>
+            <li><a href="/pay-bill">💳 Pay Bill</a></li>
+            <li><a href="/calculate-bill">📊 Calculate Bill</a></li>
+            <li><a href="/delete-customer">❌ Delete Customer</a></li>
+            <li><a href="/contact-us">🧾 Contact Us</a></li>
+        </ul>
+        
+    </div>
+
+
+    <div class="main-content">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <div>
+                <h2>Welcome, Admin!</h2>
+                <p>Choose an option from the menu or click a card below.</p>
+            </div>
+            <div>
+                <img style="height: 70px;" src="https://apexgreen.in/img/Apex-Green-Logo.png" alt="Logo">
+            </div>
+        </div>
+        
+
+        <div class="card-container">
+            <div class="card-container">
+                <a href="/add-customer" class="card">
+                    <div class="card-icon">➕</div>
+                    <div class="card-text">Add New Customer</div>
+                </a>
+                <a href="/update-customer" class="card">
+                    <div class="card-icon">➕</div>
+                    <div class="card-text">Update Customer</div>
+                </a>
+                
+                
+                <a href="/generate-bill" class="card">
+                    <div class="card-icon">🧾</div>
+                    <div class="card-text">Generate Bill</div>
+                </a>
+                
+                <a href="/pay-bill" class="card">
+                    <div class="card-icon">💳</div>
+                    <div class="card-text">Pay Bill</div>
+                </a>
+                
+                <a href="/calculate-bill" class="card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-text">Calculate Bill</div>
+                </a>
+                
+                <a href="/delete-customer" class="card">
+                    <div class="card-icon">❌</div>
+                    <div class="card-text">Delete Customer</div>
+                </a>
+
+                <a href="/contact-us" class="card">
+                    <div class="card-icon">🧾</div>
+                    <div class="card-text">Contact us</div>
+                </a>
+            </div>
+
+            
+            
+        </div>
+    
+    </div>
+    
+    
+</div>
+<footer style="background-color: #2E8B57; color: white; padding: 20px; text-align: center; font-family: Arial, sans-serif;">
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+        <div><strong>Green Maintenance & Services LLP</strong></div>
+        <div><strong>Address:- </strong> A-3/110, Sector-7, Rohini, Delhi-110085</div>
+        
+        <div><strong>Email:</strong> 
+            <a href="mailto:apexbuildtech@hotmail.com" style="color: #d4f3ff; text-decoration: underline;">
+                apexbuildtech@hotmail.com
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

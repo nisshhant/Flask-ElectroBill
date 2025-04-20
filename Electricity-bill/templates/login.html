@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75em;
+            margin-top: 0.4em;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #7e57c2;
+            box-shadow: 0 0 5px rgba(126, 87, 194, 0.4);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75em;
+            margin-top: 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            background: linear-gradient(135deg, #7e57c2, #42a5f5);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #5e35b1, #2196f3);
+        }
+
+        p {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        a {
+            color: #5e35b1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="role">Login as:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="customer">Customer</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    </div>
+</body>
+</html>

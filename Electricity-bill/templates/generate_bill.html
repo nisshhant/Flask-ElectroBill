@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Bill</title>
+    <style>
+        /* Reset some default styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Input field styles */
+input {
+    padding: 8px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Button styling */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <h2>Generate Bill</h2>
+    <form action="/generate-bill" method="POST">
+        <label for="CA_no.">CA Number :</label>
+        <input id="CA_NO" name="CA Number" required>
+
+        
+        <button type="submit" href= "/generated-bill">Generate Bill</button>
+    </form>
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            let form = document.querySelector("form");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                // Collect form data
+                let formData = {
+                    ca_number: document.getElementById("CA_NO").value
+                };
+
+                console.log("Form Data:", formData); // Debugging
+
+                // Convert to JSON and send via Fetch API
+                fetch("/generate-bill", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert("Bill generated successfully!");
+                    form.reset(); // Reset form after submission
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+            });
+        });
+
+
+    </script>
+</body>
+</html>
